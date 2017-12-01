@@ -4,10 +4,10 @@ class Product:
         self.raw = jsonprod
 
     def getItemId(self):
-        return int(self.raw["ITEM_ID"])
+        return self.raw["ITEM_ID"]
 
     def getProductNo(self):
-        return int(self.raw["PRODUCTNO"])
+        return self.raw["PRODUCTNO"]
 
     def getManufacturer(self):
         return self.raw["MANUFACTURER"]
@@ -35,3 +35,6 @@ class Product:
 
     def getDeliveryDate(self):
         return int(self.raw["DELIVERY_DATE"])
+
+    def getCategoryId(self):
+        return self.raw["ITEMGROUP_ID"]

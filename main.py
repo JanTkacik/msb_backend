@@ -3,7 +3,7 @@ from flask import Flask, jsonify, request
 import json
 import os
 import traceback
-from scoring.scorer import Scorer
+from scoring.scorer import RandomScorer
 from product.productrepo import FileProductRepository
 from product.userfilter import UserFilter
 
@@ -15,7 +15,7 @@ IS_BASE_TAG = "IsBase"
 SCORE_TAG = "Score"
 PRODUCT_TAG = "Product"
 
-scorer = Scorer()
+scorer = RandomScorer()
 repo = FileProductRepository(os.environ['DATA_PATH'])
 app = Flask(__name__)
 
@@ -23,6 +23,10 @@ app = Flask(__name__)
 @app.route('/msb/getscore', methods=['POST'])
 def get_score():
     try:
+        k = request.form.keys()
+        for t in request.form.keys():
+            print(t)
+        print(request.form)
         indata = json.loads(request.data.decode("utf-8"))
         if PROD_ID_TAG in indata:
             productId = indata[PROD_ID_TAG]

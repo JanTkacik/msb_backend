@@ -2,6 +2,7 @@
     "results":
     [
         {
+            "IsBase": true,
             "Score": 43242,
             "Product": {
                 ....

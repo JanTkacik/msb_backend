@@ -29,7 +29,7 @@ class Product:
         return self.raw["IMGURL"]
 
     def getPrice(self):
-        return int(self.raw["PRICE_VAT"])
+        return float(self.raw["PRICE_VAT"])
 
     def getCategory(self):
         return self.raw["CATEGORYTEXT"]

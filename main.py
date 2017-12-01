@@ -59,6 +59,17 @@ def get_score():
         return jsonify({'error': str(e), 'trace': traceback.format_exc()})
 
 
+@app.route('/msb/getproduct', methods=['GET'])
+def get_product():
+    productid = request.args.get('productid', default=None, type=str)
+    if productid is None:
+        return jsonify({"error": "Product id must be specified"})
+    product = repo.getProductByItemId(productid)
+    if product is None:
+        return jsonify({"error": "Product not found"})
+    return jsonify({"product": product.raw})
+
+
 if __name__ == '__main__':
     print(os.environ['FLASK_APP'])
     app.run(debug=True)

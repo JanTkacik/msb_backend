@@ -39,12 +39,12 @@ while should_continue:
     category_name = input('Nazov kategorie: ')
     if category_name not in categories:
         print('Nenasiel kategoriu')
-        choice = input('Pre opakovanie stlac y')
+        choice = input('Pre opakovanie stlac (y)')
         if choice.upper() != 'Y':
             should_continue = False
             continue
     
-    print('Kategorie ma produktov {}'.format( len(categories[category_name])))
+    print('Kategorie ma parametrov {}'.format( len(categories[category_name])))
     choice = input('Pre pokracovanie stlacte (y)')
     if choice.upper() != 'Y':
         choice = input('Pokracovat na novej kategorii? (Y)')
@@ -68,4 +68,4 @@ while should_continue:
     print('#################')
 
 with open('./collected_params.json', 'w', encoding='utf-8') as fJson:
-    previously_collected_data = json.dump(previously_collected_data, fJson)
+    json.dump(previously_collected_data, fJson)

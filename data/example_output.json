@@ -1,0 +1,23 @@
+{
+    "results":
+    [
+        {
+            "Score": 43242,
+            "Product": {
+                ....
+                ....
+            },
+            "ProCons": 
+            [
+                {
+                    "Type": "Pro",
+                    "Reason": "Vacsi penis o 3cm"
+                },
+                {
+                    "Type": "Cons",
+                    "Reason": "Horsi ksicht"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "ProdId": "abcdefgh",
+    "PriceRange": 
+        {
+            "from": 15,
+            "to": 100,
+        },
+    "UserPrefs":
+        [
+            {
+                "PrefCategory": "432h4ghjgh4321",
+                "PrefValue": true
+            },
+            {
+                "PrefCategory": "432k432k4b2k4b",
+                "PrefValue": "<55"
+            },
+            {
+                "PrefCategory": "fsdhfdksjahkj4",
+                "PrefValue": "123"
+            }
+        ]
+}

@@ -6,10 +6,22 @@ import numpy as np
 
 
 class MapParamValue:
+    MAX_WEIGHT = 100
+    MIN_WEIGHT = 0.01
     categories_params_modifiers = None
 
     def __init__(self):
         pass
+
+    def weight_approximation(self, order):
+        final_weight = (1 / pow(order, 3))* 100
+
+        if final_weight > MapParamValue.MAX_WEIGHT:
+            final_weight = MapParamValue.MAX_WEIGHT
+        elif final_weight < MapParamValue.MIN_WEIGHT:
+            final_weight = MapParamValue.MIN_WEIGHT
+
+        return final_weight
 
 
     def _load_categories_params_modifiers(self):
@@ -37,7 +49,7 @@ class MapParamValue:
                 else:
                     final_features[idx][param] = 0
                 
-                final_features[idx][param] = modifier.modify(final_features[idx][param])
+                final_features[idx][param] = modifier.modify(final_features[idx][param]) * self.weight_approximation(category_mappers[params]['order'])
 
         for param in distinct_params:
             vals = np.array([x[param] for x in final_features])

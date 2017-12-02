@@ -76,5 +76,5 @@ def get_product():
 
 
 if __name__ == '__main__':
-    print(os.environ['FLASK_APP'])
+    # print(os.environ['FLASK_APP'])
     app.run(debug=True)

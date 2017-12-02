@@ -5,7 +5,7 @@ import json
 class FileProductRepository:
     def __init__(self, path):
         self.products = []
-        with open(path) as json_data:
+        with open(path, encoding='utf-8') as json_data:
             loaded = json.load(json_data)
             for prod in loaded:
                 self.products.append(Product(prod))

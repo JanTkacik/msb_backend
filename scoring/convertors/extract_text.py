@@ -4,7 +4,7 @@ from .base_convertor import BaseConvertor
 class ExtractText(BaseConvertor):
 
     @staticmethod
-    def convert(parameter_value, convertor_params):
+    def convert(parameter_value, convertor_params, category_name=None):
         if 'offset' in convertor_params:
             offset = convertor_params['offset']
             if offset == 0:

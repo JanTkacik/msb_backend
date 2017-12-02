@@ -10,6 +10,7 @@ class MapParamValue:
     MIN_WEIGHT = 0.01
     categories_params_modifiers = None
     category_params_ordered = {}
+    final_features_cached = {}
 
     def __init__(self):
         pass
@@ -29,10 +30,13 @@ class MapParamValue:
             MapParamValue.categories_params_modifiers = json.load(file_json)
 
     def map(self, products):
+        category_name = products[0].getCategory().replace(" > ", "_")
+        if category_name in MapParamValue.final_features_cached:
+            return MapParamValue.final_features_cached[category_name]
+
         if MapParamValue.categories_params_modifiers is None:
             self._load_categories_params_modifiers()
 
-        category_name = products[0].getCategory().replace(" > ", "_")
         category_mappers = None
         with open('./data/categories/C_{}.json'.format(category_name), mode='r', encoding='utf-8') as mapping_file:
             category_mappers = json.load(mapping_file)
@@ -60,12 +64,15 @@ class MapParamValue:
             for i in range(len(normalized_vals)):
                 final_features[i][param] = normalized_vals[i] * self.weight_approximation(category_mappers[param]['order'])
 
-        return final_features
+        MapParamValue.final_features_cached[category_name] = final_features
+        return MapParamValue.final_features_cached[category_name]
 
     def get_ordered_params(self, category_name):
         if category_name in MapParamValue.category_params_ordered:
+            print('CACHED VALUE')
             return MapParamValue.category_params_ordered[category_name]
 
+        print('NEW VALUE')
         if MapParamValue.categories_params_modifiers is None:
             self._load_categories_params_modifiers()
 

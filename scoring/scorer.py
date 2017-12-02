@@ -23,19 +23,24 @@ class CategoryScorer:
 
     def getScore(self, baseproduct, products, userpreference):
         rawscores = self.mapper.map(products)
-        for product in rawscores:
+        user_pref_scores = []
+        for i, product in enumerate(rawscores):
+            user_pref_scores.append({})
             for key in product:
-                product[key] = product[key] * self.recalculate_user_preference(userpreference.get(key, 0.5))
+                user_pref_scores[i][key] = product[key] * \
+                    self.recalculate_user_preference(
+                        userpreference.get(key, 0.5))
         baseproductid = None
         for i in range(len(products)):
             if products[i].getItemId() == baseproduct.getItemId():
                 baseproductid = i
                 break
 
-        diffs = self.getProsCons(baseproductid, rawscores, baseproduct.getCategory())
+        diffs = self.getProsCons(
+            baseproductid, user_pref_scores, baseproduct.getCategory())
 
         unnormalized = np.array([sum(product.values())
-                                 for product in rawscores]).reshape(-1, 1)
+                                 for product in user_pref_scores]).reshape(-1, 1)
         normalized = MinMaxScaler((0, 100)).fit_transform(unnormalized)
         return list(normalized.reshape(-1)), diffs
 
@@ -55,12 +60,16 @@ class CategoryScorer:
             subres = {"pros": [], "cons": []}
             for b in best:
                 if b[1] != 0.0:
-                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
-                    subres["pros"].append({"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(5, "pros")})
+                    convertor = get_convertor(
+                        category_mappers[b[0]]['convertor'])
+                    subres["pros"].append(
+                        {"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(5, "pros")})
             for b in worst:
                 if b[1] != 0.0:
-                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
-                    subres["cons"].append({"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(10, "con")})
+                    convertor = get_convertor(
+                        category_mappers[b[0]]['convertor'])
+                    subres["cons"].append(
+                        {"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(10, "con")})
             res.append(subres)
         return res
 

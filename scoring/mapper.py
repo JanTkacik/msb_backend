@@ -45,8 +45,7 @@ class MapParamValue:
 
     def map(self, products):
         category_name = self.map_category_name_to_file_name(products[0].getCategory())
-        # if category_name in MapParamValue.final_features_cached:
-        if False:
+        if category_name in MapParamValue.final_features_cached:
             return MapParamValue.final_features_cached[category_name]
 
         if MapParamValue.categories_params_modifiers is None:

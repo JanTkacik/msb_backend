@@ -3,7 +3,7 @@ Rockaway hackaton backend
 
 ## Front-end
 
-Link is working demo (http://5.153.61.109:5002/).
+Link is working demo: https://tinyurl.com/mall2020
 
 REPO: https://github.com/jakubzitny/mallcz_comparator
 

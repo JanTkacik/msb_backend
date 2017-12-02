@@ -50,7 +50,11 @@ class CategoryScorer:
         for product in scores:
             res = []
             for key in product:
-                res.append((key, scores[baseproductid][key] - product[key]))
+                ratio = 1
+                if scores[baseproductid][key] - 0.001 > 0:
+                    ratio = (product[key] - scores[baseproductid][key]) / scores[baseproductid][key]
+
+                res.append((key, scores[baseproductid][key] - product[key], ratio))
             relativescores.append(res)
         res = []
         for product in relativescores:
@@ -59,17 +63,31 @@ class CategoryScorer:
             worst = prodsorted[-3:]
             subres = {"pros": [], "cons": []}
             for b in best:
+                ratio = abs(round(b[2] * 10000) / 100)
                 if b[1] != 0.0:
+<<<<<<< HEAD
                     convertor = get_convertor(
                         category_mappers[b[0]]['convertor'])
                     subres["pros"].append(
                         {"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(5, "pros")})
+=======
+                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
+                    reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['pros'])
+                    subres["pros"].append({"key": b[0], "reldiff": b[1], "reason": reason})
+>>>>>>> a32d9b91d6d88437d7bdfa2f7c99d320106516a5
             for b in worst:
+                ratio = abs(round(b[2] * 10000) / 100)
                 if b[1] != 0.0:
+<<<<<<< HEAD
                     convertor = get_convertor(
                         category_mappers[b[0]]['convertor'])
                     subres["cons"].append(
                         {"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(10, "con")})
+=======
+                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
+                    reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['con'])
+                    subres["cons"].append({"key": b[0], "reldiff": b[1], "reason": reason})
+>>>>>>> a32d9b91d6d88437d7bdfa2f7c99d320106516a5
             res.append(subres)
         return res
 

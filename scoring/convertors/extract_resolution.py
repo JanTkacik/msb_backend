@@ -1,3 +1,6 @@
+from .base_convertor import BaseConvertor
+
+
 class ExtractResolution(BaseConvertor):
 
     @staticmethod

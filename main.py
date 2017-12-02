@@ -4,7 +4,7 @@ from flask.ext.cors import CORS
 import json
 import os
 import traceback
-from scoring.scorer import RandomScorer
+from scoring.scorer import RandomScorer, CategoryScorer
 from product.productrepo import FileProductRepository
 from product.userfilter import UserFilter
 
@@ -16,7 +16,7 @@ IS_BASE_TAG = "IsBase"
 SCORE_TAG = "Score"
 PRODUCT_TAG = "Product"
 
-scorer = RandomScorer()
+scorer = CategoryScorer()
 repo = FileProductRepository(os.environ['DATA_PATH'])
 app = Flask(__name__)
 
@@ -45,7 +45,7 @@ def get_score():
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []
-            scores = scorer.getScore(otherproducts)
+            scores = scorer.getScore(otherproducts, {})
             isbase = [p.getItemId() == productId for p in otherproducts]
             for i in range(len(otherproducts)):
                 results.append(

@@ -14,4 +14,4 @@ class Mapping(BaseConvertor):
         if convertor_params['mapping'] not in Mapping.categories:
             Mapping._load_mapping(convertor_params['mapping'])
 
-        return float(Mapping.categories[convertor_params['mapping']][convertor_params['parameter_name']][parameter_value].strip()])
+        return float(Mapping.categories[convertor_params['mapping']][convertor_params['parameter_name']][parameter_value]])

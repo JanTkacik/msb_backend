@@ -19,6 +19,7 @@ class MapParamValue:
             for idx, product in enumerate(products):
                 if product.hasParam(param):
                     # volanie custom convertoru
+                    print(param)
                     convertor = get_convertor(
                         category_mappers[param]['convertor'])
                     final_features[idx][param] = convertor.convert(

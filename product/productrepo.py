@@ -7,8 +7,7 @@ class FileProductRepository:
         self.products = []
         with open(path) as json_data:
             loaded = json.load(json_data)
-            shop = loaded["SHOP"]["SHOPITEM"]
-            for prod in shop:
+            for prod in loaded:
                 self.products.append(Product(prod))
 
     def getAllProducts(self):

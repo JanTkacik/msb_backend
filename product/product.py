@@ -3,6 +3,7 @@ class Product:
     def __init__(self, jsonprod):
         self.raw = jsonprod
         self.categoryTree = [c.strip() for c in self.raw["CATEGORYTEXT"].split('>')]
+        self.params = {}
 
     def getItemId(self):
         return self.raw["ITEM_ID"]
@@ -42,3 +43,9 @@ class Product:
 
     def getCategoryTree(self):
         return self.categoryTree
+
+    def hasParam(self, param):
+        return param in self.raw["PARAMS"]
+
+    def getParam(self, param):
+        return self.raw["PARAMS"].get(param)

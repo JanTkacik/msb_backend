@@ -1,3 +1,5 @@
 flask
 flask-cors
-sklearn
+scikit-learn
+numpy
+scipy

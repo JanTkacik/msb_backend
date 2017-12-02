@@ -1,6 +1,7 @@
 import random
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
+from .mapper import MapParamValue
 
 
 class RandomScorer:
@@ -16,13 +17,14 @@ class RandomScorer:
 
 class CategoryScorer:
     def __init__(self):
-        self.mapper = None
+        self.mapper = MapParamValue()
 
     def getScore(self, products, userpreference):
         rawscores = self.mapper.map(products)
         for product in rawscores:
             for key in product:
-                product[key] = product[key] * userpreference[key]
-        unnormalized = np.array[sum(product.values()) for product in rawscores]
+                product[key] = product[key] * userpreference.get(key, 0.5)
+        unnormalized = np.array([sum(product.values())
+                                 for product in rawscores])
         normalized = MinMaxScaler((0, 100)).fit_transform(unnormalized)
         return normalized

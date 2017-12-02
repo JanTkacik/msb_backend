@@ -4,165 +4,294 @@
         "params": {
             "offset": 1
         },
-        "order": 1
+        "order": 1,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Ot\u00e1\u010dky pevn\u00e9ho disku": {
         "convertor": "ExtractText",
         "params": {
             "offset": 8
         },
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "O {value} % vyšší otáčky pevného disku",
+            "con": "O {value} % nižší otáčky pevného disku"
+        }
+
     },
     "WiDi": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
+
     },
     "64-bitov\u00fd opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má 64-bitový procesor",
+            "con": "Chybí 64-bitový procesor"
+        }
+
     },
     "USB 3.1": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má USB 3.1",
+            "con": "Chybí USB 3.1"
+        }
+
     },
     "D\u011btsk\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
+
     },
     "USB 2.0": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má USB 2.0",
+            "con": "Chybí USB 2.0"
+        }
     },
     "VGA v\u00fdstup": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má VGA výstup",
+            "con": "Chybí VGA výstup"
+        }
     },
     "LAN(RJ45)": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má přípojku na síťový LAN(RJ45) kabel",
+            "con": "Chybý přípojka na síťový LAN(RJ45) kabel"
+         }
     },
     "HDMI v\u00fdstup": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má HDMI výstup",
+            "con": "Chybí HDMI výstup"
+        }
     },
     "Pam\u011b\u0165 (RAM)": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 2
+        "order": 2,
+        "reason": {
+            "pros": "Má o {value} % více paměti RAM",
+            "con": "Má o {value} % meně paměti RAM"
+        }
     },
     "Stylov\u00fd/designov\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "3D": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Po\u010det jader procesoru": {
         "convertor": "ExtractText",
         "params": {
             "offset": 0
         },
-        "order": 13
+        "order": 13,
+        "reason": {
+            "pros": "Má o {value} % více jader procesoru",
+            "con": "Má o {value} % méně jader procesoru"
+        }
     },
     "UMTS (3G standard)": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má UMTS standard",
+            "con": "Chybí UMTS standard"
+        }
     },
     "USB 3.0": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má USB 3.0",
+            "con": "Chybí USB 3.0"
+        }
     },
     "Bluetooth": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má Bluetooth",
+            "con": "Chybí Bluetooth"
+        }
     },
     "Firewire(IEEE 1394)": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má Firewire",
+            "con": "Chybí Firewire"
+        }
     },
     "Mechanika": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 14
+        "order": 14,
+        "reason": {
+            "pros": "Má mechaniku na fyzická média",
+            "con": "Chybí mechanika na fyzická média"
+        }
     },
     "2v1": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Konstrukce": {
         "convertor": "ConstantConvertor",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "eSATA": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má eSATA",
+            "con": "Chybí eSATA"
+        }
     },
     "DVI v\u00fdstup": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má DVI výstup",
+            "con": "Chybí DVI výstup"
+        }
     },
     "\u0160\u00ed\u0159ka": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Samostatn\u00e1 grafick\u00e1 karta": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 11
+        "order": 11,
+        "reason": {
+            "pros": "Má samostatnou grafickou kartu",
+            "con": "Chybí samostatná grafická karta"
+        }
     },
     "Podsv\u00edcen\u00e1 kl\u00e1vesnice": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 9
+        "order": 9,
+        "reason": {
+            "pros": "Má podsvícení klávesnice",
+            "con": "Chybí podsvícení klávesnice"
+        }
     },
     "Frekvence":{
         "convertor": "ConvertFrequency",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má o {value} % vyšší frekvenci procesoru",
+            "con": "Má o {value} % nižší frekvenci procesoru"
+        }
     },
     "Mana\u017eersk\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Odoln\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Hern\u00ed notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Studenstsk\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Typ \u00falo\u017en\u00e9ho m\u00e9dia": {
         "convertor": "Mapper",
@@ -170,64 +299,112 @@
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Typ \u00falo\u017en\u00e9ho m\u00e9dia"
         },
-        "order": 5
+        "order": 5,
+        "reason": {
+            "pros": "Má o {value} % rychlejší úložní médium",
+            "con": "Má o {value} % pomalší úložní médium"
+        }
     },
     "Ultrabook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "\u010cte\u010dka karet": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má čtečku karet",
+            "con": "Chybí čtečka karet"
+        }
     },
     "Dotykov\u00fd displej": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má dotykový displej",
+            "con": "Chybí dotykový displej"
+        }
     },
     "Subwoofer": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má subwoofer",
+            "con": "Chybí subwoofer"
+        }
     },
     "Distribuce": {
         "convertor": "ConstantConvertor",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Thunderbolt": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má Thunderbolt",
+            "con": "Chybí Thnuderbolt"
+        }
     },
     "V\u00fddr\u017e baterie (a\u017e)": {
         "convertor": "ExtractText",
         "params": {
             "offset": 6
         },
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má o {value} % vyšší výdrž baterie",
+            "con": "Má o {value} % nižší výdrž baterie"
+        }
     },
     "mini HDMI": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Má miniHDMI",
+            "con": "Chybí miniHDMI"
+        }
     },
     "Rozli\u0161en\u00ed displeje": {
         "convertor": "ExtractResolution",
         "params": {},
-        "order": 7
+        "order": 7,
+        "reason": {
+            "pros": "Má o {value} % více obrazových bodů",
+            "con": "Má o {value} % méně obrazových bodů"
+        }
     },
     "Wi-Fi": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má Wi-Fi",
+            "con": "Chybí Wi-Fi"
+        }
     },
     "Barva": {
         "convertor": "ConstantConvertor",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Grafick\u00e9 karty": {
         "convertor": "Mapper",
@@ -235,36 +412,60 @@
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Grafick\u00e9 karty"
         },
-        "order": 12
+        "order": 12,
+        "reason": {
+            "pros": "Má o {value} % výkonnejší grafickou kartu",
+            "con": "Má o {value} % pomalší grafickou kartu"
+        }
     },
     "Hloubka": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Kancel\u00e1\u0159sk\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "USB C": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "Má USB-C",
+            "con": "Chybí USB-C"
+        }
     },
     "Dokovac\u00ed konektor": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má dokovací konektor",
+            "con": "Chybí dokovací konektor"
+        }
     },
     "Hmotnost": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 15
+        "order": 15,
+        "reason": {
+            "pros": "Je o {value} % lehčí",
+            "con": "Je o {value} % těžší"
+        }
     },
     "Procesor": {
         "convertor": "Mapper",
@@ -272,72 +473,124 @@
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Procesor"
         },
-        "order": 3
+        "order": 3,
+        "reason": {
+            "pros": "Má o {value} % výkonnejší procesor",
+            "con": "Má o {value} % pomalší procesor"
+        }
     },
     "Express Card slot": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má Express Card slot",
+            "con": "Chybí Express Card slot"
+        }
     },
     "DisplayPort": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má DisplayPort",
+            "con": "Chybí DisplayPort"
+        }
     },
     "D\u00e1msk\u00fd notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 10
+        "order": 10,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "V\u00fd\u0161ka": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "ConstantConvertor",
         "params": {},
-        "order": 4
+        "order": 4,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "Samostatn\u00e9 numerick\u00e9 kl\u00e1vesy": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 13
+        "order": 13,
+        "reason": {
+            "pros": "Má samostatné numerické klávesy",
+            "con": "Nemá samostatné numerické klávesy"
+        }
     },
     "Mini notebook": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "",
+            "con": ""
+        }
     },
     "mini DisplayPort": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má mini DisplayPort",
+            "con": "Chybí mini DisplayPort"
+        }
     },
     "Pam\u011b\u0165 grafick\u00e9 karty": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 8
+        "order": 8,
+        "reason": {
+            "pros": "Grafická karta má o {value} % větší paměť",
+            "con": "Grafická karta má o {value} % menší paměť"
+        }
     },
     "\u010cte\u010dka otisk\u016f prst\u016f": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má čtečku otiskú prstú",
+            "con": "Chybí čtečka otiskú prstú"
+        }
     },
     "Digit\u00e1ln\u00ed TV tuner": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 16
+        "order": 16,
+        "reason": {
+            "pros": "Má digitální TV tuner",
+            "con": "Chybí digitální TV tuner"
+        }
     },
     "Kapacita pevn\u00e9ho disku": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         },
-        "order": 6
+        "order": 6,
+        "reason": {
+            "pros": "Má o {value} % větší kapacitu pevného disku",
+            "con": "Má o {value} % menší kapacitu pevného disku"
+        }
     }
 }

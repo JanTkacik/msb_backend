@@ -65,6 +65,7 @@ def get_score():
                         DIFFS_TAG: diffs[i]
                     })
             out["results"] = results
+            out['params'] = scorer.mapper.get_ordered_params(baseproduct.getCategory())
             return jsonify(out)
         else:
             return jsonify({'error': "Product id not specified"})

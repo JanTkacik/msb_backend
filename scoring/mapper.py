@@ -9,6 +9,7 @@ class MapParamValue:
     MAX_WEIGHT = 100
     MIN_WEIGHT = 0.01
     categories_params_modifiers = None
+    category_params_ordered = {}
 
     def __init__(self):
         pass
@@ -60,3 +61,19 @@ class MapParamValue:
                 final_features[i][param] = normalized_vals[i] * self.weight_approximation(category_mappers[param]['order'])
 
         return final_features
+
+    def get_ordered_params(self, category_name):
+        if category_name in MapParamValue.category_params_ordered:
+            return MapParamValue.category_params_ordered[category_name]
+
+        if MapParamValue.categories_params_modifiers is None:
+            self._load_categories_params_modifiers()
+
+        with open('./data/categories/C_{}.json'.format(category_name.replace(" > ", "_")), mode='r', encoding='utf-8') as mapping_file:
+            category_mappers = json.load(mapping_file)
+
+        category_parameters = MapParamValue.categories_params_modifiers[category_name]
+        params = [(item, category_mappers[item]['order'], MapParamValue.categories_params_modifiers[category_name][item]) for item in category_parameters]
+        params = sorted(params, key=lambda x: x[1])
+        MapParamValue.category_params_ordered[category_name] = [(item[0], item[2]) for item in params]
+        return MapParamValue.category_params_ordered[category_name]

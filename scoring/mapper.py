@@ -14,7 +14,7 @@ class MapParamValue:
         pass
 
     def weight_approximation(self, order):
-        final_weight = (1 / pow(order, 3))* 100
+        final_weight = (1 / pow(order, 3)) * 100
 
         if final_weight > MapParamValue.MAX_WEIGHT:
             final_weight = MapParamValue.MAX_WEIGHT
@@ -22,7 +22,6 @@ class MapParamValue:
             final_weight = MapParamValue.MIN_WEIGHT
 
         return final_weight
-
 
     def _load_categories_params_modifiers(self):
         with open('./data/categories/collected_params.json', mode='r', encoding='utf-8') as file_json:
@@ -41,15 +40,17 @@ class MapParamValue:
         for param in distinct_params:
             # volanie custom convertoru
             convertor = get_convertor(category_mappers[param]['convertor'])
-            modifier = get_modifier(MapParamValue.categories_params_modifiers[products[0].getCategory()][param])
+            modifier = get_modifier(
+                MapParamValue.categories_params_modifiers[products[0].getCategory()][param])
             for idx, product in enumerate(products):
                 if product.hasParam(param):
                     final_features[idx][param] = convertor.convert(
                         product.getParam(param), category_mappers[param]['params'], category_name)
                 else:
                     final_features[idx][param] = 0
-                
-                final_features[idx][param] = modifier.modify(final_features[idx][param]) * self.weight_approximation(category_mappers[params]['order'])
+
+                final_features[idx][param] = modifier.modify(
+                    final_features[idx][param]) * self.weight_approximation(category_mappers[params]['order'])
 
         for param in distinct_params:
             vals = np.array([x[param] for x in final_features])

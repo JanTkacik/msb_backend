@@ -16,6 +16,9 @@ IS_BASE_TAG = "IsBase"
 SCORE_TAG = "Score"
 PRODUCT_TAG = "Product"
 DIFFS_TAG = "Diff"
+USER_PREFERENCES_TAG = "UserPrefs"
+PREF_CATEGORY_TAG = "PrefCategory"
+PREF_STRENGTH_TAG = "PrefStrength"
 
 scorer = CategoryScorer()
 repo = FileProductRepository(os.environ['DATA_PATH'])
@@ -38,15 +41,20 @@ def get_score():
                     pricefrom = float(pricerange[PRICE_RANGE_FROM_TAG])
                 if PRICE_RANGE_TO_TAG in pricerange:
                     priceto = float(pricerange[PRICE_RANGE_TO_TAG])
+            preferences = {}
+            if USER_PREFERENCES_TAG in indata:
+                userprefs = indata[USER_PREFERENCES_TAG]
+                for userpref in userprefs:
+                    preferences[userpref[PREF_CATEGORY_TAG]] = float(userpref[PREF_STRENGTH_TAG])
             baseproduct = repo.getProductByItemId(productId)
             if baseproduct is None:
                 return jsonify({'error': "Product not found"})
             userfilter = UserFilter(
-                baseproduct.getCategoryTree(), 2, pricefrom, priceto)
+                baseproduct.getCategoryTree(), 2)
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []
-            scores, diffs = scorer.getScore(baseproduct, otherproducts, {})
+            scores, diffs = scorer.getScore(baseproduct, otherproducts, preferences)
             isbase = [p.getItemId() == productId for p in otherproducts]
             for i in range(len(otherproducts)):
                 results.append(

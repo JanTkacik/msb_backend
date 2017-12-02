@@ -2,6 +2,7 @@ import random
 from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from .mapper import MapParamValue
+import math
 
 
 class RandomScorer:
@@ -23,7 +24,7 @@ class CategoryScorer:
         rawscores = self.mapper.map(products)
         for product in rawscores:
             for key in product:
-                product[key] = product[key] * userpreference.get(key, 0.5)
+                product[key] = product[key] * self.recalculate_user_preference(userpreference.get(key, 0.5))
         baseproductid = None
         for i in range(len(products)):
             if products[i].getItemId() == baseproduct.getItemId():
@@ -59,3 +60,13 @@ class CategoryScorer:
                     subres["cons"].append({"key": b[0], "reldiff": b[1]})
             res.append(subres)
         return res
+
+    def recalculate_user_preference(self, userpref):
+        if userpref <= 0.0:
+            return 0
+
+        final_weight = pow(10000, userpref - 0.5)
+        if final_weight > 100:
+            return 100
+
+        return final_weight

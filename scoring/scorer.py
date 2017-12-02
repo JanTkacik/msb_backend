@@ -51,7 +51,7 @@ class CategoryScorer:
             res = []
             for key in product:
                 ratio = 1
-                if scores[baseproductid][key] - 0.001 > 0:
+                if (scores[baseproductid][key] - 0.001) > 0 and (product[key] - scores[baseproductid][key]) > 0:
                     ratio = (product[key] - scores[baseproductid][key]) / scores[baseproductid][key]
 
                 res.append((key, scores[baseproductid][key] - product[key], ratio))

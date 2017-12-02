@@ -11,22 +11,22 @@
         "params": {
             "offset": 8
         },
-        "order": 1
+        "order": 16
     },
     "WiDi": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "64-bitov\u00fd opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "USB 3.1": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "D\u011btsk\u00fd notebook": {
         "convertor": "ConvertBool",
@@ -36,22 +36,22 @@
     "USB 2.0": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "VGA v\u00fdstup": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "LAN(RJ45)": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "HDMI v\u00fdstup": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "Pam\u011b\u0165 (RAM)": {
         "convertor": "ExtractText",
@@ -68,7 +68,7 @@
     "3D": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "Po\u010det jader procesoru": {
         "convertor": "ExtractText",
@@ -80,7 +80,7 @@
     "UMTS (3G standard)": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 1
+        "order": 16
     },
     "USB 3.0": {
         "convertor": "ConvertBool",
@@ -304,7 +304,7 @@
     "Samostatn\u00e9 numerick\u00e9 kl\u00e1vesy": {
         "convertor": "ConvertBool",
         "params": {},
-        "order": 13,
+        "order": 13
     },
     "Mini notebook": {
         "convertor": "ConvertBool",

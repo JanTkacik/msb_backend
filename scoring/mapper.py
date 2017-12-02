@@ -49,8 +49,7 @@ class MapParamValue:
                 else:
                     final_features[idx][param] = 0
 
-                final_features[idx][param] = modifier.modify(
-                    final_features[idx][param]) * self.weight_approximation(category_mappers[params]['order'])
+                final_features[idx][param] = modifier.modify(final_features[idx][param])
 
         for param in distinct_params:
             vals = np.array([x[param] for x in final_features])
@@ -58,6 +57,6 @@ class MapParamValue:
             normalized_vals = MinMaxScaler().fit_transform(vals)
             normalized_vals = normalized_vals.reshape(-1)
             for i in range(len(normalized_vals)):
-                final_features[i][param] = normalized_vals[i]
+                final_features[i][param] = normalized_vals[i] * self.weight_approximation(category_mappers[param]['order'])
 
         return final_features

@@ -3,6 +3,7 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 from .mapper import MapParamValue
 import math
+from .convertors import get_convertor
 
 
 class RandomScorer:
@@ -31,14 +32,15 @@ class CategoryScorer:
                 baseproductid = i
                 break
 
-        diffs = self.getProsCons(baseproductid, rawscores)
+        diffs = self.getProsCons(baseproductid, rawscores, baseproduct.getCategory())
 
         unnormalized = np.array([sum(product.values())
                                  for product in rawscores]).reshape(-1, 1)
         normalized = MinMaxScaler((0, 100)).fit_transform(unnormalized)
         return list(normalized.reshape(-1)), diffs
 
-    def getProsCons(self, baseproductid, scores):
+    def getProsCons(self, baseproductid, scores, category_name):
+        category_mappers = self.mapper.get_category_mappers(category_name)
         relativescores = []
         for product in scores:
             res = []
@@ -53,11 +55,12 @@ class CategoryScorer:
             subres = {"pros": [], "cons": []}
             for b in best:
                 if b[1] != 0.0:
-                    subres["pros"].append({"key": b[0], "reldiff": b[1]})
-
+                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
+                    subres["pros"].append({"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(5, "pros")})
             for b in worst:
                 if b[1] != 0.0:
-                    subres["cons"].append({"key": b[0], "reldiff": b[1]})
+                    convertor = get_convertor(category_mappers[b[0]]['convertor'])
+                    subres["cons"].append({"key": b[0], "reldiff": b[1], "reason": convertor.get_reason(10, "con")})
             res.append(subres)
         return res
 

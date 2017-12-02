@@ -11,6 +11,7 @@ class MapParamValue:
     categories_params_modifiers = None
     category_params_ordered = {}
     final_features_cached = {}
+    category_mappers_cached = {}
 
     def __init__(self):
         pass
@@ -29,17 +30,28 @@ class MapParamValue:
         with open('./data/categories/collected_params.json', mode='r', encoding='utf-8') as file_json:
             MapParamValue.categories_params_modifiers = json.load(file_json)
 
+    def get_category_mappers(self, cn):
+        category_name = self.map_category_name_to_file_name(cn)
+        if category_name in MapParamValue.category_mappers_cached:
+            return MapParamValue.category_mappers_cached[category_name]
+
+        with open('./data/categories/C_{}.json'.format(category_name), mode='r', encoding='utf-8') as mapping_file:
+            category_mappers = json.load(mapping_file)
+            MapParamValue.category_mappers_cached[category_name] = category_mappers
+            return category_mappers
+
+    def map_category_name_to_file_name(self, category_name):
+        return category_name.replace(" > ", "_")
+
     def map(self, products):
-        category_name = products[0].getCategory().replace(" > ", "_")
+        category_name = self.map_category_name_to_file_name(products[0].getCategory())
         if category_name in MapParamValue.final_features_cached:
             return MapParamValue.final_features_cached[category_name]
 
         if MapParamValue.categories_params_modifiers is None:
             self._load_categories_params_modifiers()
 
-        category_mappers = None
-        with open('./data/categories/C_{}.json'.format(category_name), mode='r', encoding='utf-8') as mapping_file:
-            category_mappers = json.load(mapping_file)
+        category_mappers = self.get_category_mappers(products[0].getCategory())
         distinct_params = list(category_mappers.keys())
         final_features = [{} for _ in products]
         for param in distinct_params:

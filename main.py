@@ -31,8 +31,6 @@ CORS(app, resources={r"*": {"origins": "*"}})
 def get_score():
     try:
         indata = json.loads(request.data.decode("utf-8"))
-        print("Incoming request")
-        print(indata)
         if PROD_ID_TAG in indata:
             productId = indata[PROD_ID_TAG]
             pricefrom = None
@@ -43,11 +41,6 @@ def get_score():
                     pricefrom = float(pricerange[PRICE_RANGE_FROM_TAG])
                 if PRICE_RANGE_TO_TAG in pricerange:
                     priceto = float(pricerange[PRICE_RANGE_TO_TAG])
-            preferences = {}
-            if USER_PREFERENCES_TAG in indata:
-                userprefs = indata[USER_PREFERENCES_TAG]
-                for userpref in userprefs:
-                    preferences[userpref[PREF_CATEGORY_TAG]] = float(userpref[PREF_STRENGTH_TAG])
             baseproduct = repo.getProductByItemId(productId)
             if baseproduct is None:
                 return jsonify({'error': "Product not found"})
@@ -56,6 +49,11 @@ def get_score():
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []
+            preferences = {}
+            if USER_PREFERENCES_TAG in indata:
+                userprefs = indata[USER_PREFERENCES_TAG]
+                for userpref in userprefs:
+                    preferences[userpref[PREF_CATEGORY_TAG]] = float(userpref[PREF_STRENGTH_TAG])
             scores, diffs = scorer.getScore(baseproduct, otherproducts, preferences)
             for i in range(len(otherproducts)):
                 currentproduct = otherproducts[i]
@@ -69,9 +67,6 @@ def get_score():
                     })
             out["results"] = results
             out['params'] = scorer.mapper.get_ordered_params(baseproduct.getCategory())
-            print("Returning")
-            for i in range(3):
-                print(results[i]["Score"])
             return jsonify(out)
         else:
             return jsonify({'error': "Product id not specified"})

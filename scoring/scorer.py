@@ -58,13 +58,13 @@ class CategoryScorer:
             worst = prodsorted[-3:]
             subres = {"pros": [], "cons": []}
             for b in best:
-                ratio = abs(round(b[2] * 10000) / 100)
+                ratio = abs(round(b[2] * 100))
                 if b[1] != 0.0:
                     convertor = get_convertor(category_mappers[b[0]]['convertor'])
                     reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['pros'])
                     subres["pros"].append({"key": b[0], "reldiff": b[1], "reason": reason})
             for b in worst:
-                ratio = abs(round(b[2] * 10000) / 100)
+                ratio = abs(round(b[2] * 100))
                 if b[1] != 0.0:
                     convertor = get_convertor(category_mappers[b[0]]['convertor'])
                     reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['con'])

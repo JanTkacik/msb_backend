@@ -18,3 +18,8 @@ class UserFilter:
             if self.priceto is None or price <= self.priceto:
                 return True
         return False
+
+    def key(self):
+        real_price_from = self.pricefrom if self.pricefrom is not None else '-'
+        real_price_to = self.priceto if self.priceto is not None else '-'
+        return ','.join(['|'.join(self.categoryTree), real_price_from, real_price_to])

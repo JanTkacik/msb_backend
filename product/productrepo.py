@@ -3,6 +3,9 @@ import json
 
 
 class FileProductRepository:
+
+    categories = {}
+
     def __init__(self, path):
         self.products = []
         with open(path, encoding='utf-8') as json_data:
@@ -20,8 +23,15 @@ class FileProductRepository:
         return None
 
     def getProductsByUserFilter(self, userfilter):
+        key = userfilter.key()
+        if key in FileProductRepository.categories:
+            return FileProductRepository.categories[key]
         returnlist = []
         for product in self.products:
             if userfilter.isOK(product):
+                product.raw.pop('DESCRIPTION')
+                product.raw.pop('DELIVERY')
                 returnlist.append(product)
-        return returnlist
+        
+        FileProductRepository.categories[key] = returnlist
+        return FileProductRepository.categories[key]

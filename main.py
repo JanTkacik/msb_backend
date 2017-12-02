@@ -55,13 +55,14 @@ def get_score():
             out = {}
             results = []
             scores, diffs = scorer.getScore(baseproduct, otherproducts, preferences)
-            isbase = [p.getItemId() == productId for p in otherproducts]
             for i in range(len(otherproducts)):
+                currentproduct = otherproducts[i]
+
                 results.append(
                     {
-                        IS_BASE_TAG: isbase[i],
+                        IS_BASE_TAG: otherproducts[i].getItemId() == productId,
                         SCORE_TAG: scores[i],
-                        PRODUCT_TAG: otherproducts[i].raw,
+                        PRODUCT_TAG: currentproduct.raw,
                         DIFFS_TAG: diffs[i]
                     })
             out["results"] = results

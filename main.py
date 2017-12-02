@@ -15,6 +15,7 @@ PRICE_RANGE_TO_TAG = "to"
 IS_BASE_TAG = "IsBase"
 SCORE_TAG = "Score"
 PRODUCT_TAG = "Product"
+DIFFS_TAG = "Diff"
 
 scorer = CategoryScorer()
 repo = FileProductRepository(os.environ['DATA_PATH'])
@@ -45,14 +46,15 @@ def get_score():
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []
-            scores = scorer.getScore(otherproducts, {})
+            scores, diffs = scorer.getScore(baseproduct, otherproducts, {})
             isbase = [p.getItemId() == productId for p in otherproducts]
             for i in range(len(otherproducts)):
                 results.append(
                     {
                         IS_BASE_TAG: isbase[i],
                         SCORE_TAG: scores[i],
-                        PRODUCT_TAG: otherproducts[i].raw
+                        PRODUCT_TAG: otherproducts[i].raw,
+                        DIFFS_TAG: diffs[i]
                     })
             out["results"] = results
             return jsonify(out)

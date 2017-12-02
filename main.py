@@ -1,5 +1,6 @@
 #!flask/bin/python
 from flask import Flask, jsonify, request
+from flask.ext.cors import CORS
 import json
 import os
 import traceback
@@ -19,14 +20,12 @@ scorer = RandomScorer()
 repo = FileProductRepository(os.environ['DATA_PATH'])
 app = Flask(__name__)
 
+CORS(app, resources={r"*": {"origins": "*"}})
+
 
 @app.route('/msb/getscore', methods=['POST'])
 def get_score():
     try:
-        k = request.form.keys()
-        for t in request.form.keys():
-            print(t)
-        print(request.form)
         indata = json.loads(request.data.decode("utf-8"))
         if PROD_ID_TAG in indata:
             productId = indata[PROD_ID_TAG]

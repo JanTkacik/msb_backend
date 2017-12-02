@@ -41,7 +41,7 @@ def get_score():
             if baseproduct is None:
                 return jsonify({'error': "Product not found"})
             userfilter = UserFilter(
-                baseproduct.getCategoryTree(), 10, pricefrom, priceto)
+                baseproduct.getCategoryTree(), 2, pricefrom, priceto)
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []

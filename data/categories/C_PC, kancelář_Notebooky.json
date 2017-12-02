@@ -1,7 +1,9 @@
 {
     "\u00dahlop\u0159\u00ed\u010dka v palc\u00edch": {
-        "convertor": "BaseConvertor",
-        "params": {}
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 1
+        }
     },
     "Ot\u00e1\u010dky pevn\u00e9ho disku": {
         "convertor": "ExtractText",
@@ -15,135 +17,120 @@
     },
     "64-bitov\u00fd opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "USB 3.1": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "D\u011btsk\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "USB 2.0": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "VGA v\u00fdstup": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "LAN(RJ45)": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "HDMI v\u00fdstup": {
         "convertor": "ConvertBool",
+        "params": {}
+    },
+    "Pam\u011b\u0165 (RAM)": {
+        "convertor": "ExtractText",
         "params": {
-            "offset": 8
+            "offset": 2
         }
     },
-    "Pam\u011b\u0165 (RAM)": "BB",
     "Stylov\u00fd/designov\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "3D": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
-    "Po\u010det jader procesoru": "BB",
+    "Po\u010det jader procesoru": {
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 0
+        }
+    },
     "UMTS (3G standard)": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "USB 3.0": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Bluetooth": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Firewire(IEEE 1394)": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Mechanika": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "2v1": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "Konstrukce": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConstantConvertor",
         "params": {}
     },
     "eSATA": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "DVI v\u00fdstup": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "\u0160\u00ed\u0159ka": {
-        "convertor": "BaseConvertor",
-        "params": {}
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 2
+        }
     },
     "Samostatn\u00e1 grafick\u00e1 karta": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Podsv\u00edcen\u00e1 kl\u00e1vesnice": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
-    "Frekvence": "BB",
+    "Frekvence":{
+        "convertor": "ConvertFrequency",
+        "params": {}
+    },
     "Mana\u017eersk\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "Odoln\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "Hern\u00ed notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "Studenstsk\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "Typ \u00falo\u017en\u00e9ho m\u00e9dia": {
@@ -154,43 +141,38 @@
         }
     },
     "Ultrabook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "\u010cte\u010dka karet": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Dotykov\u00fd displej": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Subwoofer": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Distribuce": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConstantConvertor",
         "params": {}
     },
     "Thunderbolt": {
         "convertor": "ConvertBool",
+        "params": {}
+    },
+    "V\u00fddr\u017e baterie (a\u017e)": {
+        "convertor": "ExtractText",
         "params": {
-            "offset": 8
+            "offset": 6
         }
     },
-    "V\u00fddr\u017e baterie (a\u017e)": "BB",
     "mini HDMI": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Rozli\u0161en\u00ed displeje": {
         "convertor": "ExtractResolution",
@@ -198,12 +180,10 @@
     },
     "Wi-Fi": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Barva": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConstantConvertor",
         "params": {}
     },
     "Grafick\u00e9 karty": {
@@ -214,21 +194,22 @@
         }
     },
     "Hloubka": {
-        "convertor": "BaseConvertor",
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 2
+        }
+    },
+    "Kancel\u00e1\u0159sk\u00fd notebook": {
+        "convertor": "ConvertBool",
         "params": {}
     },
-    "Kancel\u00e1\u0159sk\u00fd notebook": "UP",
     "USB C": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Dokovac\u00ed konektor": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Hmotnost": {
         "convertor": "ExtractText",
@@ -245,43 +226,37 @@
     },
     "Express Card slot": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "DisplayPort": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "D\u00e1msk\u00fd notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "V\u00fd\u0161ka": {
-        "convertor": "BaseConvertor",
-        "params": {}
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 2
+        }
     },
     "Opera\u010dn\u00ed syst\u00e9m": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConstantConvertor",
         "params": {}
     },
     "Samostatn\u00e9 numerick\u00e9 kl\u00e1vesy": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Mini notebook": {
-        "convertor": "BaseConvertor",
+        "convertor": "ConvertBool",
         "params": {}
     },
     "mini DisplayPort": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Pam\u011b\u0165 grafick\u00e9 karty": {
         "convertor": "ExtractText",
@@ -291,15 +266,11 @@
     },
     "\u010cte\u010dka otisk\u016f prst\u016f": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Digit\u00e1ln\u00ed TV tuner": {
         "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
+        "params": {}
     },
     "Kapacita pevn\u00e9ho disku": {
         "convertor": "ExtractText",

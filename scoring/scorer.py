@@ -24,7 +24,8 @@ class CategoryScorer:
         for product in rawscores:
             for key in product:
                 product[key] = product[key] * userpreference.get(key, 0.5)
+
         unnormalized = np.array([sum(product.values())
-                                 for product in rawscores])
+                                 for product in rawscores]).reshape(-1, 1)
         normalized = MinMaxScaler((0, 100)).fit_transform(unnormalized)
-        return normalized
+        return list(normalized.reshape(-1))

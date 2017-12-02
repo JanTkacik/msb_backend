@@ -1,4 +1,5 @@
 import json
+from .base_convertor import BaseConvertor
 
 
 class Mapping(BaseConvertor):
@@ -11,7 +12,7 @@ class Mapping(BaseConvertor):
 
     @staticmethod
     def convert(parameter_value, convertor_params):
-        if convertor_params['mapping'] not in Mapping.categories:
-            Mapping._load_mapping(convertor_params['mapping'])
-
-        return float(Mapping.categories[convertor_params['mapping']][convertor_params['parameter_name']][parameter_value]])
+        cn = convertor_params['category_name']
+        if cn not in Mapping.categories:
+            Mapping._load_mapping(cn)
+        return float(Mapping.categories[cn][convertor_params['parameter_name']][parameter_value])

@@ -19,7 +19,6 @@ class MapParamValue:
             for idx, product in enumerate(products):
                 if product.hasParam(param):
                     # volanie custom convertoru
-                    print(param)
                     convertor = get_convertor(
                         category_mappers[param]['convertor'])
                     final_features[idx][param] = convertor.convert(
@@ -28,7 +27,9 @@ class MapParamValue:
                     final_features[idx][param] = 0
         for param in distinct_params:
             vals = np.array([x[param] for x in final_features])
+            vals = vals.reshape(-1, 1)
             normalized_vals = MinMaxScaler().fit_transform(vals)
+            normalized_vals = normalized_vals.reshape(-1)
             for i in range(len(normalized_vals)):
                 final_features[i][param] = normalized_vals[i]
 

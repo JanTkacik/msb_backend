@@ -64,13 +64,13 @@ class CategoryScorer:
             subres = {"pros": [], "cons": []}
             for b in best:
                 ratio = int(abs(round(b[2] * 100)))
-                if b[1] != 0.0:
+                if abs(b[1]) >= 0.005:
                     convertor = get_convertor(category_mappers[b[0]]['convertor'])
                     reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['pros'])
                     subres["pros"].append({"key": b[0], "reldiff": b[1], "reason": reason})
             for b in worst:
                 ratio = int(abs(round(b[2] * 100)))
-                if b[1] != 0.0:
+                if abs(b[1]) >= 0.005:
                     convertor = get_convertor(category_mappers[b[0]]['convertor'])
                     reason = convertor.get_reason(ratio, category_mappers[b[0]]['reason']['con'])
                     subres["cons"].append({"key": b[0], "reldiff": b[1], "reason": reason})

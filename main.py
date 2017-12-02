@@ -45,7 +45,7 @@ def get_score():
             otherproducts = repo.getProductsByUserFilter(userfilter)
             out = {}
             results = []
-            scores = [scorer.getScore(p) for p in otherproducts]
+            scores = scorer.getScore(otherproducts)
             isbase = [p.getItemId() == productId for p in otherproducts]
             for i in range(len(otherproducts)):
                 results.append(

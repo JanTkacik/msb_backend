@@ -4,5 +4,5 @@ class BaseConvertor:
         return parameter_value
 
     @staticmethod
-    def get_reason(value, pc):
-        return pc + " " + str(value)
+    def get_reason(final_value, pc):
+        return pc.format(value=final_value)

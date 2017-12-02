@@ -19,7 +19,7 @@ class CategoryScorer:
         self.mapper = None
 
     def getScore(self, products, userpreference):
-        rawscores = self.mapper(products)
+        rawscores = self.mapper.map(products)
         for product in rawscores:
             for key in product:
                 product[key] = product[key] * userpreference[key]

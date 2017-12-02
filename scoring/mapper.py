@@ -1,27 +1,34 @@
 from .convertors import get_convertor
+import json
+from sklearn.preprocessing import MinMaxScaler
+import numpy as np
+
 
 class MapParamValue:
-    
-    def __init__(self, category_name):
+    def __init__(self):
         pass
 
-    def _get_distinct_params(self, products):
-        return ['Procesor']
-
     def map(self, products):
-        distinct_params = self._get_distinct_params(products)
+        category_name = products[0].getCategory().replace(" > ", "_")
+        category_mappers = None
+        with open('./data/categories/C_{}.json'.format(category_name, mode='r', encoding='utf-8')) as mapping_file:
+            category_mappers = json.load(mapping_file)
+        distinct_params = list(category_mappers.keys())
         final_features = [{} for _ in products]
         for param in distinct_params:
-            min_value = 0
-            max_value = 1000
             for idx, product in enumerate(products):
-                if param in product['PARAMS']:
-                    final_features[idx][param] = 0.5
+                if product.hasParam(param):
                     # volanie custom convertoru
-                    convertor = get_convertor('convertor_name')
-                    final_features[idx][param] = convertor.convert(final_features[idx][param])                    
+                    convertor = get_convertor(
+                        category_mappers[param]['convertor'])
+                    final_features[idx][param] = convertor.convert(
+                        product.getParam(param), category_mappers[param]['params'])
                 else:
                     final_features[idx][param] = 0
-            
-            # normalize values
+        for param in distinct_params:
+            vals = np.array([x[param] for x in final_features])
+            normalized_vals = MinMaxScaler().fit_transform(vals)
+            for i in range(len(normalized_vals)):
+                final_features[i][param] = normalized_vals[i]
+
         return final_features

@@ -1,312 +1,310 @@
-{  
-    "PC, kancel\u00e1\u0159 > Notebooky":{  
-       "\u00dahlop\u0159\u00ed\u010dka v palc\u00edch": {
-           "convertor": "BaseConvertor",
-           "params": {}
-       },
-       "Ot\u00e1\u010dky pevn\u00e9ho disku":{
-            "convertor": "ExtractText",
-            "params": {
-                "offset": 8
-            }
-        },
-       "WiDi":{
-        "convertor": "ConvertBool",
-        "params": {}
-    },
-       "64-bitov\u00fd opera\u010dn\u00ed syst\u00e9m":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "USB 3.1":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "D\u011btsk\u00fd notebook":{
+{
+    "\u00dahlop\u0159\u00ed\u010dka v palc\u00edch": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "USB 2.0":{
+    "Ot\u00e1\u010dky pevn\u00e9ho disku": {
+        "convertor": "ExtractText",
+        "params": {
+            "offset": 8
+        }
+    },
+    "WiDi": {
+        "convertor": "ConvertBool",
+        "params": {}
+    },
+    "64-bitov\u00fd opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "VGA v\u00fdstup":{
+    "USB 3.1": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "LAN(RJ45)":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "HDMI v\u00fdstup":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "Pam\u011b\u0165 (RAM)":"BB",
-       "Stylov\u00fd/designov\u00fd notebook":{
+    "D\u011btsk\u00fd notebook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "3D":{
+    "USB 2.0": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "VGA v\u00fdstup": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "LAN(RJ45)": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "HDMI v\u00fdstup": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "Pam\u011b\u0165 (RAM)": "BB",
+    "Stylov\u00fd/designov\u00fd notebook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Po\u010det jader procesoru":"BB",
-       "UMTS (3G standard)":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "USB 3.0":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "Bluetooth":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "Firewire(IEEE 1394)":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "Mechanika":{
-        "convertor": "ConvertBool",
-        "params": {
-            "offset": 8
-        }
-    },
-       "2v1":{
+    "3D": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Konstrukce":{
-        "convertor": "BaseConvertor",
-        "params": {}
-    },
-       "eSATA":{
+    "Po\u010det jader procesoru": "BB",
+    "UMTS (3G standard)": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "DVI v\u00fdstup":{
+    "USB 3.0": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "\u0160\u00ed\u0159ka":{
-        "convertor": "BaseConvertor",
-        "params": {}
-    },
-       "Samostatn\u00e1 grafick\u00e1 karta":{
+    "Bluetooth": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Podsv\u00edcen\u00e1 kl\u00e1vesnice":{
+    "Firewire(IEEE 1394)": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Frekvence":"BB",
-       "Mana\u017eersk\u00fd notebook":{
+    "Mechanika": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "2v1": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Odoln\u00fd notebook":{
+    "Konstrukce": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Hern\u00ed notebook":{
+    "eSATA": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "DVI v\u00fdstup": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "\u0160\u00ed\u0159ka": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Studenstsk\u00fd notebook":{
+    "Samostatn\u00e1 grafick\u00e1 karta": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "Podsv\u00edcen\u00e1 kl\u00e1vesnice": {
+        "convertor": "ConvertBool",
+        "params": {
+            "offset": 8
+        }
+    },
+    "Frekvence": "BB",
+    "Mana\u017eersk\u00fd notebook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Typ \u00falo\u017en\u00e9ho m\u00e9dia":{
+    "Odoln\u00fd notebook": {
+        "convertor": "BaseConvertor",
+        "params": {}
+    },
+    "Hern\u00ed notebook": {
+        "convertor": "BaseConvertor",
+        "params": {}
+    },
+    "Studenstsk\u00fd notebook": {
+        "convertor": "BaseConvertor",
+        "params": {}
+    },
+    "Typ \u00falo\u017en\u00e9ho m\u00e9dia": {
         "convertor": "Mapper",
         "params": {
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Typ \u00falo\u017en\u00e9ho m\u00e9dia"
         }
     },
-       "Ultrabook":{
+    "Ultrabook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "\u010cte\u010dka karet":{
+    "\u010cte\u010dka karet": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Dotykov\u00fd displej":{
+    "Dotykov\u00fd displej": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Subwoofer":{
+    "Subwoofer": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Distribuce":{
+    "Distribuce": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Thunderbolt":{
+    "Thunderbolt": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "V\u00fddr\u017e baterie (a\u017e)":"BB",
-       "mini HDMI":{
+    "V\u00fddr\u017e baterie (a\u017e)": "BB",
+    "mini HDMI": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Rozli\u0161en\u00ed displeje":{
+    "Rozli\u0161en\u00ed displeje": {
         "convertor": "ExtractResolution",
         "params": {}
     },
-       "Wi-Fi":{
+    "Wi-Fi": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Barva":{
+    "Barva": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Grafick\u00e9 karty":{
+    "Grafick\u00e9 karty": {
         "convertor": "Mapper",
         "params": {
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Grafick\u00e9 karty"
         }
     },
-       "Hloubka":{
+    "Hloubka": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Kancel\u00e1\u0159sk\u00fd notebook":"UP",
-       "USB C":{
+    "Kancel\u00e1\u0159sk\u00fd notebook": "UP",
+    "USB C": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Dokovac\u00ed konektor":{
+    "Dokovac\u00ed konektor": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Hmotnost":{
+    "Hmotnost": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         }
     },
-       "Procesor":{
+    "Procesor": {
         "convertor": "Mapper",
         "params": {
             "category_name": "PC, kancelář_Notebooky",
             "parameter_name": "Procesor"
         }
     },
-       "Express Card slot":{
+    "Express Card slot": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "DisplayPort":{
+    "DisplayPort": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "D\u00e1msk\u00fd notebook":{
+    "D\u00e1msk\u00fd notebook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "V\u00fd\u0161ka":{
+    "V\u00fd\u0161ka": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Opera\u010dn\u00ed syst\u00e9m":{
+    "Opera\u010dn\u00ed syst\u00e9m": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "Samostatn\u00e9 numerick\u00e9 kl\u00e1vesy":{
+    "Samostatn\u00e9 numerick\u00e9 kl\u00e1vesy": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Mini notebook":{
+    "Mini notebook": {
         "convertor": "BaseConvertor",
         "params": {}
     },
-       "mini DisplayPort":{
+    "mini DisplayPort": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Pam\u011b\u0165 grafick\u00e9 karty":{
+    "Pam\u011b\u0165 grafick\u00e9 karty": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         }
     },
-       "\u010cte\u010dka otisk\u016f prst\u016f":{
+    "\u010cte\u010dka otisk\u016f prst\u016f": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Digit\u00e1ln\u00ed TV tuner":{
+    "Digit\u00e1ln\u00ed TV tuner": {
         "convertor": "ConvertBool",
         "params": {
             "offset": 8
         }
     },
-       "Kapacita pevn\u00e9ho disku":{
+    "Kapacita pevn\u00e9ho disku": {
         "convertor": "ExtractText",
         "params": {
             "offset": 2
         }
     }
-    }
- }
+}

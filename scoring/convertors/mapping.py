@@ -6,7 +6,7 @@ class Mapping(BaseConvertor):
 
     @staticmethod
     def _load_mapping(category_name):
-        with open('./available_mappings/{}.json'.format(category_name, mode='r', encoding='utf-8') as mapping_file:
+        with open('./data/categories/AV_{}.json'.format(category_name, mode='r', encoding='utf-8')) as mapping_file:
             Mapping.categories[category_name] = json.load(mapping_file)
 
     @staticmethod

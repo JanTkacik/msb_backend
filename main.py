@@ -31,6 +31,8 @@ CORS(app, resources={r"*": {"origins": "*"}})
 def get_score():
     try:
         indata = json.loads(request.data.decode("utf-8"))
+        print("Incoming request")
+        print(indata)
         if PROD_ID_TAG in indata:
             productId = indata[PROD_ID_TAG]
             pricefrom = None
@@ -67,6 +69,9 @@ def get_score():
                     })
             out["results"] = results
             out['params'] = scorer.mapper.get_ordered_params(baseproduct.getCategory())
+            print("Returning")
+            for i in range(3):
+                print(results[i]["Score"])
             return jsonify(out)
         else:
             return jsonify({'error': "Product id not specified"})

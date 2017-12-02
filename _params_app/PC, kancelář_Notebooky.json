@@ -1,1 +1,43 @@
-{"Typ \u00falo\u017en\u00e9ho m\u00e9dia": {"SSD": 0, "HDD": 0, "Flash memory": 0, "SSHD": 0, "HDD + SSD": 0}, "Grafick\u00e9 karty": {"NVIDIA Geforce GT 940MX": 0, "NVIDIA Geforce GTX 970M": 0, "NVIDIA GeForce 930MX": 0, "Intel HD Graphics 400": 0, "AMD Radeon R series": 0, "NVIDIA Geforce GTX 960M": 0, "NVIDIA Geforce GT 940M": 0, "Intel Iris Graphics": 0, "AMD Radeon R5": 0, "NVIDIA Geforce GTX 1080": 0, "NVIDIA Geforce GTX 1070": 0, "GeForce GTX 1060": 0, "AMD Radeon R7": 0, "Intel HD Graphics": 0, "NVIDIA Geforce GTX 1060": 0, "NVIDIA Geforce GTX 950M": 0, "NVIDIA GeForce 920M": 0, "NVIDIA GeForce GTX 1050": 0, "NVIDIA GeForce GT 920MX": 0, "NVIDIA GeForce 940M": 0, "NVIDIA GeForce \u0159ady G100": 0}}
+{
+    "Typ \u00falo\u017en\u00e9ho m\u00e9dia":{
+       "SSD":7,
+       "HDD + SSD": 5,
+       "Flash memory": 2,
+       "HDD": 0,
+       "SSHD": 3
+    },
+    "Grafick\u00e9 karty":{
+       "NVIDIA GeForce GTX 1050": 50499,
+       "NVIDIA Geforce GT 940MX": 11461,
+       "NVIDIA Geforce GTX 1070": 152370,
+       "NVIDIA Geforce GTX 960M": 30085.5,
+       "NVIDIA Geforce GTX 1060": 69575,
+       "NVIDIA GeForce \u0159ady G100":0,
+       "NVIDIA Geforce GTX 970M": 51247,
+       "Intel Iris Graphics": 12812,
+       "NVIDIA GeForce 940M": 8818.5,
+       "GeForce GTX 1060": 69575,
+       "NVIDIA Geforce GT 940M":11380,
+       "NVIDIA Geforce GTX 950M":21500,
+       "AMD Radeon R5": 8822,
+       "AMD Radeon R series": 31294,
+       "NVIDIA Geforce GTX 1080":125447,
+       "NVIDIA GeForce 920M":7242,
+       "Intel HD Graphics 400": 2181,
+       "NVIDIA GeForce GT 920MX": 7733,
+       "AMD Radeon R7": 6364.5,
+       "Intel HD Graphics": 9264.5,
+       "NVIDIA GeForce 930MX":9056
+    },
+    "Procesor":{
+       "Intel Atom": 37.5,
+       "Intel Core i5": 167,
+       "Intel Celeron":85,
+       "Intel Core i7": 155.5,
+       "ARM":10,
+       "Intel Pentium":118,
+       "Intel Core i3":98,
+       "AMD": 87,
+       "Intel Core M": 120
+    }
+ }

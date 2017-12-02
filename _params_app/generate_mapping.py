@@ -10,7 +10,9 @@ for product in products:
         categories[product['CATEGORYTEXT']] = {}
     
     for param in product['PARAMS']:
-        categories[product['CATEGORYTEXT']][param] = 0
+        if param not in categories[product['CATEGORYTEXT']]:
+            categories[product['CATEGORYTEXT']][param] = set()
+        categories[product['CATEGORYTEXT']][param].add(product['PARAMS'][param])
 
 should_continue = True
 while should_continue:
@@ -29,13 +31,18 @@ while should_continue:
         should_continue = choice.upper() == 'Y'
         continue
 
-
-    with open('./{}.json'.format(category_name), 'w', encoding='utf-8') as fJson:
-        json.dump(categories[category_name], fJson)
+    write_to_mapping = {}
+    for param in categories[category_name]:
+        print('Parameter: {}'.format(param))
+        choice = input('Pridat mapping? (Y)')
+        if choice.upper() == 'Y':
+            write_to_mapping[param] = {}
+            for param_value in categories[category_name][param]:
+                write_to_mapping[param][param_value] = 0
 
     print('#################')
     print('### KONIEC ######')
     print('#################')
 
-with open('./collected_params.json', 'w', encoding='utf-8') as fJson:
-    previously_collected_data = json.dump(previously_collected_data, fJson)
+    with open('./{}.json'.format(category_name.replace(' > ', '_')), 'w', encoding='utf-8') as fJson:
+        json.dump(write_to_mapping, fJson)
